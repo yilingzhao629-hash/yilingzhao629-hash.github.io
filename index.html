@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>奥斯 - 专业信号采集分析APP</title>
+    <title>遨兹 - 专业信号采集分析APP</title>
     <!-- 引入Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入Font Awesome -->
@@ -108,11 +108,11 @@
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
                         <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-6">
-                            奥斯信号采集<br>
+                            遨兹信号采集<br>
                             <span class="text-primary">专业分析工具</span>
                         </h1>
                         <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
-                            奥斯APP专注于信号采集与分析，提供食欲分析、评语分析、视频预分析等多种功能，助力您高效处理各类信号数据。
+                            遨兹APP专注于信号采集与分析，提供时域分析、频域分析、时频域分析等多种功能，助力您高效处理各类信号数据。
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="#download" class="btn-download bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
@@ -143,17 +143,17 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="text-center mb-16 animate-fade-in">
                     <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">强大功能，专业分析</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">奥斯APP集成多种信号分析功能，满足您的专业需求</p>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">遨兹APP集成多种信号分析功能，满足您的专业需求</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- 功能卡片1 -->
-                    <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 animate-fade-in delay-100">
+                   <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 animate-fade-in delay-100">
                         <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                             <i class="fa fa-cutlery text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">食欲分析</h3>
-                        <p class="text-gray-600">通过先进算法分析信号数据，提供精准的食欲状态评估和分析报告，助力研究与应用。</p>
+                        <h3 class="text-xl font-bold mb-3">时域分析</h3>
+                        <p class="text-gray-600">对信号随时间变化的特征进行分析，展示信号幅度、相位等参数的时间分布规律，直观呈现信号的瞬态和稳态特性。</p>
                     </div>
                     
                     <!-- 功能卡片2 -->
@@ -161,8 +161,8 @@
                         <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
                             <i class="fa fa-comments text-secondary text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">评语分析</h3>
-                        <p class="text-gray-600">智能分析文本评语信号，提取关键信息和情感倾向，生成结构化分析结果和可视化报告。</p>
+                        <h3 class="text-xl font-bold mb-3">频域分析</h3>
+                        <p class="text-gray-600">通过傅里叶变换将信号转换到频率域，分析信号的频谱成分和频率分布特征，揭示信号的谐波组成和能量分布规律。</p>
                     </div>
                     
                     <!-- 功能卡片3 -->
@@ -170,8 +170,15 @@
                         <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                             <i class="fa fa-video-camera text-accent text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">视频预分析</h3>
-                        <p class="text-gray-600">对视频信号进行预处理和分析，提取关键帧和特征参数，为后续深入分析提供基础数据支持。</p>
+                        <h3 class="text-xl font-bold mb-3">时频分析</h3>
+                        <p class="text-gray-600">结合时间域和频率域的分析方法，动态展示信号频率随时间的变化规律，适用于非平稳信号的时变特征研究。</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 animate-fade-in delay-400">
+                        <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-signal text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">小波分析</h3>
+                        <p class="text-gray-600">通过多分辨率分析方法，对信号进行多尺度分解，同时捕捉信号的时域和频域局部特征，适合处理突变信号和瞬态现象。</p>
                     </div>
                 </div>
             </div>
@@ -181,7 +188,7 @@
         <section id="download" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">下载奥斯APP</h2>
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">下载遨兹APP</h2>
                     <p class="text-gray-300 max-w-2xl mx-auto text-lg">随时随地进行信号采集与分析，支持多种设备</p>
                 </div>
                 
@@ -297,7 +304,7 @@
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <span class="text-primary text-2xl"><i class="fa fa-signal"></i></span>
-                        <span class="text-xl font-bold">奥斯</span>
+                        <span class="text-xl font-bold">遨兹</span>
                     </div>
                     <p class="text-gray-400 mb-4">专业的信号采集与分析工具，助力科研与应用。</p>
                     <div class="flex space-x-4">
@@ -338,7 +345,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
-                <p>© 2023 奥斯APP 版权所有</p>
+                <p>© 2025 遨兹APP 版权所有</p>
             </div>
         </div>
     </footer>
@@ -408,7 +415,7 @@
             const images = document.querySelectorAll('img');
             images.forEach(img => {
                 if (!img.alt) {
-                    img.alt = '奥斯APP相关图片';
+                    img.alt = '遨兹APP相关图片';
                 }
             });
         });

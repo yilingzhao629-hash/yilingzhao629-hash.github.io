@@ -1,1 +1,421 @@
-<h1>欢迎来到赵义玲的主页</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥斯 - 专业信号采集分析APP</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-navbar {
+                transition: background-color 0.3s, box-shadow 0.3s, padding 0.3s;
+            }
+        }
+    </style>
+    
+    <style>
+        /* 基础动画定义 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark antialiased">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-navbar bg-transparent py-4">
+        <div class="container mx-auto px-4 md:px-6">
+            <nav class="flex items-center justify-between">
+                <!-- 网站名称 -->
+                <a href="#home" class="flex items-center space-x-2">
+                    <span class="text-primary text-2xl"><i class="fa fa-signal"></i></span>
+                    <span class="text-xl font-bold text-dark dark:text-white">奥斯</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link font-medium hover:text-primary transition-colors">首页</a>
+                    <a href="#download" class="nav-link font-medium hover:text-primary transition-colors">APP下载</a>
+                    <a href="#membership" class="nav-link font-medium hover:text-primary transition-colors">会员</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-dark focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2 animate-fade-in">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link py-2 hover:text-primary transition-colors">首页</a>
+                    <a href="#download" class="nav-link py-2 hover:text-primary transition-colors">APP下载</a>
+                    <a href="#membership" class="nav-link py-2 hover:text-primary transition-colors">会员</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首页/英雄区域 -->
+        <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-blue-50 to-indigo-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-6">
+                            奥斯信号采集<br>
+                            <span class="text-primary">专业分析工具</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+                            奥斯APP专注于信号采集与分析，提供食欲分析、评语分析、视频预分析等多种功能，助力您高效处理各类信号数据。
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#download" class="btn-download bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
+                                <i class="fa fa-download mr-2"></i>立即下载
+                            </a>
+                            <a href="#features" class="bg-white hover:bg-gray-50 text-dark font-medium py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 text-center border border-gray-200">
+                                <i class="fa fa-info-circle mr-2"></i>了解更多
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 animate-fade-in delay-200">
+                        <div class="relative">
+                            <!-- 手机展示图 -->
+                            <div class="relative z-10 mx-auto max-w-xs">
+                                <img src="https://picsum.photos/id/1/300/600" alt="奥斯APP界面展示" class="rounded-3xl shadow-2xl border-8 border-white">
+                            </div>
+                            <!-- 装饰元素 -->
+                            <div class="absolute -top-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
+                            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 功能特点 -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">强大功能，专业分析</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">奥斯APP集成多种信号分析功能，满足您的专业需求</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 功能卡片1 -->
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 animate-fade-in delay-100">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-cutlery text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">食欲分析</h3>
+                        <p class="text-gray-600">通过先进算法分析信号数据，提供精准的食欲状态评估和分析报告，助力研究与应用。</p>
+                    </div>
+                    
+                    <!-- 功能卡片2 -->
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 animate-fade-in delay-200">
+                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-comments text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">评语分析</h3>
+                        <p class="text-gray-600">智能分析文本评语信号，提取关键信息和情感倾向，生成结构化分析结果和可视化报告。</p>
+                    </div>
+                    
+                    <!-- 功能卡片3 -->
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 animate-fade-in delay-300">
+                        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-video-camera text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">视频预分析</h3>
+                        <p class="text-gray-600">对视频信号进行预处理和分析，提取关键帧和特征参数，为后续深入分析提供基础数据支持。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 下载区域 -->
+        <section id="download" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">下载奥斯APP</h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto text-lg">随时随地进行信号采集与分析，支持多种设备</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                    <!-- 下载选项1 - 安卓 -->
+                    <div class="bg-gray-800 rounded-xl p-8 w-full md:w-auto flex flex-col items-center hover:bg-gray-700 transition-colors animate-fade-in delay-100">
+                        <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-android text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Android 版本</h3>
+                        <p class="text-gray-300 mb-6 text-center">支持Android 8.0及以上版本</p>
+                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center">
+                            <i class="fa fa-download mr-2"></i>下载APK
+                        </a>
+                    </div>
+                    
+                    <!-- 下载选项2 - iOS -->
+                    <div class="bg-gray-800 rounded-xl p-8 w-full md:w-auto flex flex-col items-center hover:bg-gray-700 transition-colors animate-fade-in delay-200">
+                        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-apple text-gray-900 text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">iOS 版本</h3>
+                        <p class="text-gray-300 mb-6 text-center">支持iOS 12.0及以上版本</p>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center">
+                            <i class="fa fa-apple mr-2"></i>App Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 会员区域 -->
+        <section id="membership" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4">会员特权</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">升级会员，解锁更多专业功能</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto animate-fade-in delay-100">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <!-- 普通用户 -->
+                        <div class="p-8 border-b md:border-b-0 md:border-r border-gray-100">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">普通用户</h3>
+                            <p class="text-3xl font-bold mb-6 text-gray-900">免费</p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>基础信号采集功能</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>每日有限次分析</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>简单数据报表</span>
+                                </li>
+                                <li class="flex items-start text-gray-400">
+                                    <i class="fa fa-times text-red-400 mt-1 mr-3"></i>
+                                    <span>高级分析算法</span>
+                                </li>
+                                <li class="flex items-start text-gray-400">
+                                    <i class="fa fa-times text-red-400 mt-1 mr-3"></i>
+                                    <span>无广告体验</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 会员用户 -->
+                        <div class="p-8 bg-gradient-to-br from-primary/5 to-primary/10">
+                            <div class="bg-primary text-white text-sm font-medium py-1 px-3 rounded-full inline-block mb-4">
+                                推荐
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">会员用户</h3>
+                            <p class="text-3xl font-bold mb-6 text-primary">¥29<span class="text-sm font-normal text-gray-600">/月</span></p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>全部基础功能</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>无限次分析</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>高级数据报表与导出</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>专业级分析算法</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>无广告体验</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="mt-8 block text-center bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-all">
+                                立即开通会员
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-primary text-2xl"><i class="fa fa-signal"></i></span>
+                        <span class="text-xl font-bold">奥斯</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">专业的信号采集与分析工具，助力科研与应用。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-weixin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-weibo text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-github text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">功能介绍</a></li>
+                        <li><a href="#download" class="text-gray-400 hover:text-white transition-colors">APP下载</a></li>
+                        <li><a href="#membership" class="text-gray-400 hover:text-white transition-colors">会员特权</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">支持</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">帮助中心</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">使用教程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">法律信息</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">用户协议</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">隐私政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">版权声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+                <p>© 2023 奥斯APP 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-md', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-2');
+            }
+        });
+        
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // 切换图标
+            const icon = menuToggle.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // 点击导航链接后关闭移动菜单
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // 滚动动画
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // 初始设置
+        document.addEventListener('DOMContentLoaded', () => {
+            animateOnScroll();
+            
+            // 设置默认图片alt文本
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.alt) {
+                    img.alt = '奥斯APP相关图片';
+                }
+            });
+        });
+        
+        // 滚动时触发动画
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
+
